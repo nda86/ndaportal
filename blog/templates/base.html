@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}">
+</head>
+<body>
+<h1>
+    {% block header %}
+    HOME
+    {% endblock %}
+</h1>
+<div class="menu">
+    <a href="{% url 'home' %}">home</a>
+    <a href="{% url 'posts' %}">posts</a>
+    <a href="{% url 'about' %}">О шараге</a>
+</div>
+
+<div>
+    {% block content %}
+        {% lorem 10 p %}
+    {% endblock %}
+</div>
+</body>
+</html>
